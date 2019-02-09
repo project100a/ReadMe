@@ -1,0 +1,17 @@
+Command Docker
+
+
+//to build an image from dockerfile
+docker build --tag=<name> .
+
+//to link mongo db to another webapp
+ docker run --link=mongodb:mongo -p 4200:3000 --name nodeandmongo nodejsmongodb
+ 
+//to create an volume 
+ docker volume create --name=mongodata
+ 
+//to run mongo db and assign to volume
+docker run --name mongodb -v mongodata:/data/db -d -p 27017:27017 
+ 
+ //to tage an image
+ docker tag friendlyhello sachin/get-started:test(version)
